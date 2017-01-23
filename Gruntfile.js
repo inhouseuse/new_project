@@ -32,6 +32,23 @@ module.exports = (grunt) => {
                     server: './'
                 }
             }
+        },
+        // pugのコンパイル
+        pug: {
+            compile: {
+                options: {
+                    pretty: true,
+                    data: {
+                        debug: false
+                    }
+                },
+                files: {
+                    cwd: 'src/',
+                    src:['**/*.pug','!**/_*.pug'],
+                    dest: 'dist/html/',
+                    ext: '.html'
+                }
+            }
         }
     });
 
@@ -39,6 +56,7 @@ module.exports = (grunt) => {
     grunt.loadNpmTasks('grunt-contrib-watch'); //watch
     grunt.loadNpmTasks('grunt-contrib-sass'); //sass
     grunt.loadNpmTasks('grunt-browser-sync'); //browser-sync
+    grunt.loadNpmTasks('grunt-contrib-pug');
 
     // デフォルトタスクの設定
     grunt.registerTask('default', ['browserSync', 'watch']);
