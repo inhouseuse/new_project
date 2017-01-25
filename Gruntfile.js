@@ -29,7 +29,7 @@ module.exports = (grunt) => {
                 },
                 options: {
                     watchTask: true,
-                    server: './'
+                    server: './app/'
                 }
             }
         },
@@ -49,14 +49,29 @@ module.exports = (grunt) => {
                     ext: '.html'
                 }
             }
-        }
+        },
+        typescript: {
+            base: {
+                src: ['src/scripts/**/*.ts'],
+                dest: 'app/scripts',
+                options: {
+                    module: 'commonjs', 
+                    target: 'es5', 
+                    noImplicitAny: false,
+                    // basePath: 'src/scripts',
+                    sourceMap: false,
+                    declaration: true
+                }
+            }
+        },
     });
 
     // プラグインのロード
     grunt.loadNpmTasks('grunt-contrib-watch'); //watch
     grunt.loadNpmTasks('grunt-contrib-sass'); //sass
     grunt.loadNpmTasks('grunt-browser-sync'); //browser-sync
-    grunt.loadNpmTasks('grunt-contrib-pug');
+    grunt.loadNpmTasks('grunt-contrib-pug'); //pug
+    grunt.loadNpmTasks('grunt-typescript'); //typescript
 
     // デフォルトタスクの設定
     grunt.registerTask('default', ['browserSync', 'watch']);

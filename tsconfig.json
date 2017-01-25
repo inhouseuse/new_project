@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "outDir": "app/scripts",
+        "rootDir": "src/scripts",
+        "sourceMap": false,
+        "removeComments": true,
+        "types": [ "jquery"]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -9,11 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/underscore": "^1.7.36",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-ejs": "^0.3.0"
+    "grunt-typescript": ""
+  },
+  "dependencies": {
+    "@types/jquery": "^2.0.39"
   }
 }
