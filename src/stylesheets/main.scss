@@ -1,8 +1,6 @@
-@charset "utf-8";
-
-// normalize.scssのインポート
-@import 'common/_nomalize.scss';
+@import './foundation/*.scss';
 
 h1 {
-    color: #ff0;
+    color: red;
+    font-size: 12px;
 }

@@ -50,6 +50,9 @@ module.exports = (grunt) => {
                 }
             }
         },
+        // grunt-typescriptがtsconfigを読み込まずにコンパイルするため
+        // jQueryなど外部ライブラリのコンパイルでエラーになる
+        // たぶん解決できないので、Gulpに乗り換える
         typescript: {
             base: {
                 src: ['src/scripts/**/*.ts'],

@@ -1,7 +1,9 @@
-import { sayHello } from "../scripts/common/utils";
+function hello(compiler: string) {
+    console.log(`Hello from ${compiler}`);
+}
+hello("TypeScript");
 
-const $h1 = $('h1');
 
-$h1.css('color', 'red');
-
-console.log(sayHello("TypeScript"));
+$(function() {
+  $( "#sample-calender" ).datepicker();
+});
