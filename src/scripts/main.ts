@@ -1,15 +1,18 @@
+// typescriptのテスト
 function hello(compiler: string) {
     console.log(`Hello from ${compiler}`);
 }
-hello("TypeScript");
+hello('TypeScript');
 hello('aaa');
 
-
+// jQueryUIのテスト
 $(function() {
-  $("#sample-calender").datepicker();
+  $('#sample-calender').datepicker();
+  // jQueryのテスト
   $('#title').click(function(){
-    console.log("aaa");
-    alert(this.target.tagName);
+    console.log('aaa');
   });
 });
 
+// underscore.jsのテスト
+console.log(_.random(0, 100));
