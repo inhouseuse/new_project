@@ -1,9 +1,13 @@
 extends ./common/_layout.pug
 
 block title
-  title aaa
+  title SamplePaage
 
 block content
   include ./common/_header.pug
-  h1 これは１ページ目です
+  h1#title これは１ページ目です.
+  p:i.fa.fa-camera-retro 日付を選ぶ：
+    input(type="text" id="sample-calender")
+
+
   include ./common/_fotter.pug

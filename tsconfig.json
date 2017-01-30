@@ -1,6 +1,6 @@
 {
     "files": [
-        "src/scripts/**/*.ts"
+        "src/scripts/*.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,
