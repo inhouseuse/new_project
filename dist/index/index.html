@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="lib/fontawsome/font-awesome.min.css">-->
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Index Page</title>
+  </head>
+  <body>
+    <h1>Index Page</h1>
+    <div id="app-index">
+      <ul>
+        <template v-for="page in pages">
+          <li><a v-bind:href="page.url">{{ page.name }}</a></li>
+        </template>
+      </ul>
+    </div>
+    <script src="vue/vue.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
