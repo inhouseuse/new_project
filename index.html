@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index/fontawsome/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="materialize/css/materialize.min.css">-->
+  <!--<link rel="stylesheet" href="Semantic/semantic.min.css">-->
+  <link rel="stylesheet" href="index/css/index.css">
+  <title>Index Page</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-title">
+        <h3>name & title</h3>
+      </div>
+    </div>
+  </header>
+  <nav class="header-nav">
+    <ul>
+      <li></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>Index Page</h1>
+    <div id="app-index">
+      <ul class="index-list">
+        <template v-for="page in pages">
+          <li class="index-list__item">
+            <p><a v-on:click="openWindowL(page)">{{ page.name }}</a></p>
+            <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
+          </li>
+        </template>
+      </ul>
+    </div>
+  </main>
+  <!--<script src="Semantic/semantic.min.js"></script>-->
+  <script src="index/vue/vue.min.js"></script>
+  <script>
+    'use strict';
+    var openWindow = function (page) {
+      // var features = "width='1024',menubar=no,location=no,resizable=yes,scrollbars=yes,status=no";
+      var features = "width=1024,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no";
+      window.open(page.url, page.name, "width=10");
+    }
+
+    new Vue({
+        el: '#app-index',
+        data: {
+            msg: 'aaa',
+            pages: [
+                {
+                    name: 'SamplePage1',
+                    url: 'dist/sample.html',
+                    imageUrl: 'index/img/sample1.png'
+                },
+                {
+                    name: 'SamplePage2',
+                    url: 'dist/sample.html',
+                    imageUrl: 'index/img/sample2.png'
+                },
+            ]
+        },
+        methods: {
+            openWindowL: function (page) {
+                openWindow(page);
+            }
+        }
+    });
+  </script>
+</body>
+
+</html>
