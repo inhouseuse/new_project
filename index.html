@@ -2,7 +2,8 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <link rel="stylesheet" href="index/fontawsome/font-awesome.min.css">
   <link rel="stylesheet" href="index/materialize/css/materialize.min.css">
   <!--<link rel="stylesheet" href="Semantic/semantic.min.css">-->
@@ -11,59 +12,82 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="header-title">
-        <h3>name & title</h3>
-      </div>
-    </div>
+  <header class="z-depth-1 navbar-fixed">
+      <nav class="top-nav white accent-2">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a href="#" class="brand-logo black-text">IndexPage</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a class="black-text" href="#">link1</a></li>
+              <li><a class="black-text" href="#">link2</a></li>
+              <li><a class="black-text" href="#">link3</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--<div class="container">
+          <div class="nav-wrapper">
+            <a class="page-title black-text">IndexPage</a>
+          </div>
+        </div>-->
+      </nav>
   </header>
-  <!--<nav>
-    <ul>
-      <li></li>
-    </ul>
-  </nav>-->
   <main>
-    <h1>Index Page</h1>
-    <div id="app-index" class="container">
+    <div class="start-area">
+      <div style="height: 200px"></div>    
       <div class="row">
-        <template v-for="page in pages">
-          <div class="col s4">
-            <div class="card">
-              <div class="card-image">
-                <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
-                <span class="card-title">{{ page.name }}</span>
-              </div>
-              <div class="card-content">
-                <p>{{ page.comment }}</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
+        <div class="col s12">
+          <div class="center-align">
+            <h1 class="white-text">Strat this Application</h1>
+          </div>
+        </div>
+        <div class="col s12">
+          <div class="center-align">
+            <a class="waves-effect btn-large btn-transparent">Get Start</a>
+          </div>
+        </div>
+      </div>
+      <div style="height: 200px"></div>
+    </div>
+    <div class="container">
+      <div id="app-index">
+        <div class="row">
+          <div class="col s12">
+            <div class="center-align">
+              <h1>Open the page</h1>
             </div>
           </div>
-        </template>
-      </div>
-      <!--<div class="row index-list">-->
-      <div class="row">
-        <template v-for="page in pages">
-          <!--<li class="col s4 index-list__item">-->
-          <div class="col s4 card-panel teal lighten-2">
-            <p><a v-on:click="openWindowL(page)">{{ page.name }}</a></p>
-            <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
-          </div>
-        </template>
+          <template v-for="page in pages">
+            <div class="col l4 m6 s12">
+              <div class="card js-card">
+                <div class="card-image">
+                  <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
+                  <span class="card-title">{{ page.name }}</span>
+                </div>
+                <!--<div class="card-content">
+                  <p>{{ page.comment }}</p>
+                </div>-->
+                <div class="card-action">
+                  <div class="center-align">
+                    <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
       </div>
     </div>
-    <!--<div class="container">
-      <div class="row">
-        <div class="col s4" style="background: #f6d6f1">1</div>
-        <div class="col s4" style="background: #f6d6f1">2</div>
-        <div class="col s4" style="background: #f6d6f1">3</div>
-      </div>
-    </div>-->
   </main>
-  <!--<script src="Semantic/semantic.min.js"></script>-->
+  <footer class="page-footer black accent-2">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <div class="center-align white-text">© 2017 Copyright XXX</div>
+          </div>
+        </div>
+      </div>
+  </footer>
+  <script src="index/jQuery/jquery-3.1.1.min.js"></script>  
   <script src="index/vue/vue.min.js"></script>
   <script>
     'use strict';
@@ -80,19 +104,37 @@
         pages: [{
             name: 'SamplePage1',
             url: 'dist/sample.html',
-            imageUrl: 'index/img/sample1.png',
+            imageUrl: 'index/img/300x200.png',
             comment: 'sample is ...',
           },
           {
             name: 'SamplePage2',
             url: 'dist/sample.html',
-            imageUrl: 'index/img/sample2.png',
-            comment: 'sample is ...',            
+            imageUrl: 'index/img/300x200.png',
+            comment: 'sample is ...',
           },
           {
             name: 'SamplePage3',
             url: 'dist/sample.html',
-            imageUrl: 'index/img/sample2.png',
+            imageUrl: 'index/img/300x200.png',
+            comment: 'sample is ...',
+          },
+          {
+            name: 'SamplePage4',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/300x200.png',
+            comment: 'sample is ...',
+          },
+          {
+            name: 'SamplePage5',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/300x200.png',
+            comment: 'sample is ...',
+          },
+          {
+            name: 'SamplePage6',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/300x200.png',
             comment: 'sample is ...',
           },
         ]
@@ -103,6 +145,12 @@
         }
       }
     });
+
+    document.addEventListener('scroll', function(){
+      console.log("aaa"); 
+      $('.js-card').addClass('fade_in_up');
+    });    
+
   </script>
 </body>
 
