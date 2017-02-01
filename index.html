@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="index/fontawsome/font-awesome.min.css">
-  <!--<link rel="stylesheet" href="materialize/css/materialize.min.css">-->
+  <link rel="stylesheet" href="index/materialize/css/materialize.min.css">
   <!--<link rel="stylesheet" href="Semantic/semantic.min.css">-->
   <link rel="stylesheet" href="index/css/index.css">
   <title>Index Page</title>
@@ -18,23 +18,50 @@
       </div>
     </div>
   </header>
-  <nav class="header-nav">
+  <!--<nav>
     <ul>
       <li></li>
     </ul>
-  </nav>
-  <main class="container">
+  </nav>-->
+  <main>
     <h1>Index Page</h1>
-    <div id="app-index">
-      <ul class="index-list">
+    <div id="app-index" class="container">
+      <div class="row">
         <template v-for="page in pages">
-          <li class="index-list__item">
+          <div class="col s4">
+            <div class="card">
+              <div class="card-image">
+                <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
+                <span class="card-title">{{ page.name }}</span>
+              </div>
+              <div class="card-content">
+                <p>{{ page.comment }}</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <!--<div class="row index-list">-->
+      <div class="row">
+        <template v-for="page in pages">
+          <!--<li class="col s4 index-list__item">-->
+          <div class="col s4 card-panel teal lighten-2">
             <p><a v-on:click="openWindowL(page)">{{ page.name }}</a></p>
             <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
-          </li>
+          </div>
         </template>
-      </ul>
+      </div>
     </div>
+    <!--<div class="container">
+      <div class="row">
+        <div class="col s4" style="background: #f6d6f1">1</div>
+        <div class="col s4" style="background: #f6d6f1">2</div>
+        <div class="col s4" style="background: #f6d6f1">3</div>
+      </div>
+    </div>-->
   </main>
   <!--<script src="Semantic/semantic.min.js"></script>-->
   <script src="index/vue/vue.min.js"></script>
@@ -47,27 +74,34 @@
     }
 
     new Vue({
-        el: '#app-index',
-        data: {
-            msg: 'aaa',
-            pages: [
-                {
-                    name: 'SamplePage1',
-                    url: 'dist/sample.html',
-                    imageUrl: 'index/img/sample1.png'
-                },
-                {
-                    name: 'SamplePage2',
-                    url: 'dist/sample.html',
-                    imageUrl: 'index/img/sample2.png'
-                },
-            ]
-        },
-        methods: {
-            openWindowL: function (page) {
-                openWindow(page);
-            }
+      el: '#app-index',
+      data: {
+        msg: 'aaa',
+        pages: [{
+            name: 'SamplePage1',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/sample1.png',
+            comment: 'sample is ...',
+          },
+          {
+            name: 'SamplePage2',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/sample2.png',
+            comment: 'sample is ...',            
+          },
+          {
+            name: 'SamplePage3',
+            url: 'dist/sample.html',
+            imageUrl: 'index/img/sample2.png',
+            comment: 'sample is ...',
+          },
+        ]
+      },
+      methods: {
+        openWindowL: function (page) {
+          openWindow(page);
         }
+      }
     });
   </script>
 </body>
