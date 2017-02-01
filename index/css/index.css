@@ -21,9 +21,11 @@ main {
 
 .start-area {
   width: 100%;
-  background-image: linear-gradient(-90deg, #FF00A1, #F6FF00);
-  opacity: 0.5;
-  /*animation: huerotator 3s infinite alternate;*/
+  /*background-image: linear-gradient(-90deg, #FF00A1, #F6FF00);*/
+  background-image: linear-gradient(-90deg, #F89B7C, #9875FF);
+  /*background-image: linear-gradient(-90deg, #ffffff, #000000);*/
+  /*opacity: 0.5;*/
+  /*animation: huerotator 5s infinite alternate;*/
 }
 
 .btn-transparent {
@@ -32,8 +34,8 @@ main {
   border-radius: 2px;
 }
 
-.js-card {
-  margin-top: 60px;
+.card {
+  transform: translateY(200px);
 }
 
 @keyframes huerotator {
@@ -47,22 +49,24 @@ main {
     filter: hue-rotate(360deg);
   }
 }
-.fade_in_up {
-    animation-name: fadeInUp;
+.slide_in_from_bottom {
+    animation-name: slide_in_from_bottom;
     animation-duration: 0.5s;
     animation-timing-function: ease;
-    animation-delay: 1s;
+    animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
-@keyframes fadeInUp {
+@keyframes slide_in_from_bottom {
     0% {
-        transform: translateY(0px);
+        /*opacity: 0;*/
+        transform: translateY(200px);
     }
     100% {
-        transform: translateY(-60px);
+        /*opacity: 1;      */
+        transform: translateY(0px);
     }
 }
