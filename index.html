@@ -35,7 +35,7 @@
         </div>
         <div class="col s12">
           <div class="center-align">
-            <a class="waves-effect btn-large btn-transparent" id="getStart">Get Started</a>
+            <a class="waves-effect btn-large btn-transparent getstart" id="js-getStart">Get Started</a>
           </div>
         </div>
       </div>
@@ -92,6 +92,9 @@
         var features = 'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
         window.open(page.url,'_blank', features);
       }
+
+      // 
+      $('#js-getStart').addClass('fade_in');
 
       new Vue({
         el: '#app-index',
@@ -153,7 +156,7 @@
         // imageUrl: 'index/img/300x200.png',
         // comment: 'sample is ...',
       }
-      $('#getStart').click(function(){
+      $('#js-getStart').click(function(){
         openWindow(startPage);
       });
 

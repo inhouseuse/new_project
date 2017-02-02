@@ -22,7 +22,8 @@ main {
 .start-area {
   width: 100%;
   /*background-image: linear-gradient(-90deg, #FF00A1, #F6FF00);*/
-  background-image: linear-gradient(-90deg, #F89B7C, #9875FF);
+  background-image: linear-gradient(-90deg, #F6F6F6, #26A69A);
+  /*background-image: radial-gradient( #26A69A, #F6F6F6);*/
   /*background-image: linear-gradient(-90deg, #ffffff, #000000);*/
   /*opacity: 0.5;*/
   /*animation: huerotator 5s infinite alternate;*/
@@ -32,10 +33,11 @@ main {
   border: 1px solid #ffffff;
   background: transparent;
   border-radius: 2px;
+  opacity: 0;
 }
 
 .card {
-  transform: translateY(200px);
+  transform: translateY(300%);
 }
 
 @keyframes huerotator {
@@ -51,9 +53,9 @@ main {
 }
 .slide_in_from_bottom {
     animation-name: slide_in_from_bottom;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-timing-function: ease;
-    animation-delay: 0s;
+    animation-delay: 0.3s;
     animation-iteration-count: 1;
     animation-direction: alternate;
     animation-fill-mode: forwards;
@@ -63,10 +65,30 @@ main {
 @keyframes slide_in_from_bottom {
     0% {
         /*opacity: 0;*/
-        transform: translateY(200px);
+        transform: translateY(300%);
     }
     100% {
         /*opacity: 1;      */
         transform: translateY(0px);
+    }
+}
+
+.fade_in {
+    animation-name: fade_in;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;      
     }
 }
