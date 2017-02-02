@@ -26,7 +26,7 @@
   </header>
   <main>
     <div class="start-area">
-      <div style="height: 200px"></div>
+      <div style="height: 150px"></div>
       <div class="row">
         <div class="col s12">
           <div class="center-align">
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div style="height: 200px"></div>
+      <div style="height: 150px"></div>
     </div>
     <div class="container">
       <div id="app-index">
@@ -89,8 +89,8 @@
 
       // WindowOpenを呼び出す
       var openWindow = function (page) {
-        var features = "width=1024,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no";
-        window.open(page.url, page.name, features);
+        var features = 'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
+        window.open(page.url,'_blank', features);
       }
 
       new Vue({
