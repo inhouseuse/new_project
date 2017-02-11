@@ -11,10 +11,10 @@
 
 <body>
   <header class="z-depth-1 navbar-fixed">
-    <nav class="top-nav pink lighten-5">
+    <nav class="top-nav indigo">
       <div class="nav-wrapper">
-        <div class="container">
-          <a class="brand-logo black-text">IndexPage</a>
+        <div class="container white-text">
+          <a class="brand-logo">IndexPage</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <!--<li><a class="black-text" href="#">link1</a></li>
             <li><a class="black-text" href="#">link2</a></li>
@@ -25,7 +25,7 @@
     </nav>
   </header>
   <main>
-    <div class="start-area">
+    <div class="start-area indigo white-text">
       <div style="height: 150px"></div>
       <div class="row">
         <div class="col s12">
@@ -35,7 +35,7 @@
         </div>
         <div class="col s12">
           <div class="center-align">
-            <a class="waves-effect btn-large" id="js-getStart">Get Started</a>
+            <a class="waves-effect btn-large pink accent-2" id="js-getStart">Get Started</a>
           </div>
         </div>
       </div>
@@ -47,8 +47,8 @@
           <div class="col s12">
             <div class="viewgroup">
               <h1>Open the Page</h1>
-              <button type="button" class="btn waves-effect waves-light" v-bind:class="{ disabled: !isCardView }" @click="toggleView()">cardview</button>
-              <button type="button" class="btn waves-effect waves-light" v-bind:class="{ disabled: isCardView }" @click="toggleView()">listView</button>
+              <button type="button" class="btn waves-effect waves-light pink accent-2" v-bind:class="{ disabled: !isCardView }" @click="toggleView()">cardview</button>
+              <button type="button" class="btn waves-effect waves-light pink accent-2" v-bind:class="{ disabled: isCardView }" @click="toggleView()">listView</button>
             </div>
           </div>
           <template v-if="isCardView">
@@ -64,7 +64,7 @@
                     </div>-->
                   <div class="card-action">
                     <div class="center-align">
-                      <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+                      <a class="waves-effect waves-light btn pink accent-2" v-on:click="openWindowL(page)">Open</a>
                     </div>
                   </div>
                 </div>
@@ -76,12 +76,11 @@
                 <ul class="collection">
                   <template v-for="page in pages">
                     <li class="collection-item collection-group">
-                      <!--<img class="collection-image" v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">-->
                       <div>
                         <p>{{ page.name }}</p>
-                        <p class="teal-text lighten-2">{{ page.comment }}</p>
+                        <p class="pink-text accent-1-text">{{ page.comment }}</p>
                       </div>
-                      <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+                      <a class="waves-effect waves-light btn pink accent-2" v-on:click="openWindowL(page)">Open</a>
                     </li>
                   </template>
                 </div>
