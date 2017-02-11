@@ -11,7 +11,7 @@
 
 <body>
   <header class="z-depth-1 navbar-fixed">
-    <nav class="top-nav white accent-2">
+    <nav class="top-nav pink lighten-5">
       <div class="nav-wrapper">
         <div class="container">
           <a class="brand-logo black-text">IndexPage</a>
@@ -30,12 +30,12 @@
       <div class="row">
         <div class="col s12">
           <div class="center-align">
-            <h1 class="white-text">Strat Application</h1>
+            <h1>Strat Application</h1>
           </div>
         </div>
         <div class="col s12">
           <div class="center-align">
-            <a class="waves-effect btn-large btn-transparent getstart" id="js-getStart">Get Started</a>
+            <a class="waves-effect btn-large" id="js-getStart">Get Started</a>
           </div>
         </div>
       </div>
@@ -45,27 +45,47 @@
       <div id="app-index">
         <div class="row">
           <div class="col s12">
-            <div class="center-align">
-              <h1>Open the page</h1>
+            <div class="viewgroup">
+              <h1>Open the Page</h1>
+              <button type="button" class="btn waves-effect waves-light" v-bind:class="{ disabled: !isCardView }" @click="toggleView()">cardview</button>
+              <button type="button" class="btn waves-effect waves-light" v-bind:class="{ disabled: isCardView }" @click="toggleView()">listView</button>
             </div>
           </div>
-          <template v-for="page in pages">
-            <div class="col l4 m6 s12">
-              <div class="card js-card">
-                <div class="card-image">
-                  <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
-                  <span class="card-title">{{ page.name }}</span>
-                </div>
-                <!--<div class="card-content">
-                    <p>{{ page.comment }}</p>
-                  </div>-->
-                <div class="card-action">
-                  <div class="center-align">
-                    <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+          <template v-if="isCardView">
+            <template v-for="page in pages">
+              <div class="col l4 m6 s12">
+                <div class="card js-card">
+                  <div class="card-image">
+                    <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
+                    <span class="card-title">{{ page.name }}</span>
+                  </div>
+                  <!--<div class="card-content">
+                      <p>{{ page.comment }}</p>
+                    </div>-->
+                  <div class="card-action">
+                    <div class="center-align">
+                      <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </template>
+          </template>
+          <template v-if="!isCardView">
+              <div class="col s12">
+                <ul class="collection">
+                  <template v-for="page in pages">
+                    <li class="collection-item collection-group">
+                      <!--<img class="collection-image" v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">-->
+                      <div>
+                        <p>{{ page.name }}</p>
+                        <p class="teal-text lighten-2">{{ page.comment }}</p>
+                      </div>
+                      <a class="waves-effect waves-light btn" v-on:click="openWindowL(page)">Open</a>
+                    </li>
+                  </template>
+                </div>
+              </div>
           </template>
         </div>
       </div>
@@ -84,22 +104,24 @@
   <script src="index/vue/vue.min.js"></script>
   <script>
     'use strict';
-    
-    $(function(){
+
+    $(function () {
 
       // WindowOpenを呼び出す
       var openWindow = function (page) {
-        var features = 'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
-        window.open(page.url,'_blank', features);
+        var features =
+          'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
+        window.open(page.url, '_blank', features);
       }
 
       // 
-      $('#js-getStart').addClass('fade_in');
+      // $('#js-getStart').addClass('fade_in');
 
       new Vue({
         el: '#app-index',
         data: {
           msg: 'aaa',
+          isCardView: true,
           pages: [{
               name: 'SamplePage1',
               url: 'dist/sample.html',
@@ -141,13 +163,16 @@
         methods: {
           openWindowL: function (page) {
             openWindow(page);
+          },
+          toggleView: function () {
+            this.isCardView = !this.isCardView;
           }
         }
       });
       // スライドイン
-      $(window).scroll(function () {
-        $('.js-card').addClass('slide_in_from_bottom');
-      });
+      // $(window).scroll(function () {
+      //   $('.js-card').addClass('slide_in_from_bottom');
+      // });
 
       // スタートページの呼び出し
       var startPage = {
@@ -156,7 +181,7 @@
         // imageUrl: 'index/img/300x200.png',
         // comment: 'sample is ...',
       }
-      $('#js-getStart').click(function(){
+      $('#js-getStart').click(function () {
         openWindow(startPage);
       });
 

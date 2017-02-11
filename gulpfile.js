@@ -59,8 +59,8 @@ gulp.task('bs-reload', () => {
 gulp.task('serve', () => {
   browserSync.init({
     server: {
-      baseDir: "dist/", //対象ディレクトリ
-      index: "sample.html" //インデックスファイル
+      baseDir: "", //対象ディレクトリ
+      index: "index.html" //インデックスファイル
     },
     open: false
   });
