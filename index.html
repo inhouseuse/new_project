@@ -3,22 +3,27 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="index/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="index/lib/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="index/lib/fontawsome/css/font-awesome.min.css">
   <link rel="stylesheet" href="index/css/index.css">
   <title>IndexPage</title>
 </head>
 
 <body>
+  <div class="container">
+    <div id="root"></div>
+  </div>
   <header class="z-depth-1 navbar-fixed">
     <nav class="top-nav indigo">
       <div class="nav-wrapper">
         <div class="container white-text">
-          <a class="brand-logo">IndexPage</a>
+          <a class="brand-logo">
+            <span class="header-bar"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            IndexPage
+          </a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <!--<li><a class="black-text" href="#">link1</a></li>
-            <li><a class="black-text" href="#">link2</a></li>
-            <li><a class="black-text" href="#">link3</a></li>-->
           </ul>
         </div>
       </div>
@@ -59,9 +64,6 @@
                     <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
                     <span class="card-title">{{ page.name }}</span>
                   </div>
-                  <!--<div class="card-content">
-                      <p>{{ page.comment }}</p>
-                    </div>-->
                   <div class="card-action">
                     <div class="center-align">
                       <a class="waves-effect waves-light btn pink accent-2" v-on:click="openWindowL(page)">Open</a>
@@ -99,8 +101,9 @@
       </div>
     </div>
   </footer>
-  <script src="index/jQuery/jquery-3.1.1.min.js"></script>
-  <script src="index/vue/vue.min.js"></script>
+  <script src="index/lib/jQuery/jquery-3.1.1.min.js"></script>
+  <script src="index/lib/vue/vue.min.js"></script>
+  <script src="index/dist/bundle.js"></script>
   <script>
     'use strict';
 
@@ -112,9 +115,6 @@
           'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
         window.open(page.url, '_blank', features);
       }
-
-      // 
-      // $('#js-getStart').addClass('fade_in');
 
       new Vue({
         el: '#app-index',
@@ -168,17 +168,11 @@
           }
         }
       });
-      // スライドイン
-      // $(window).scroll(function () {
-      //   $('.js-card').addClass('slide_in_from_bottom');
-      // });
 
       // スタートページの呼び出し
       var startPage = {
         name: 'SamplePage',
         url: 'dist/sample.html',
-        // imageUrl: 'index/img/300x200.png',
-        // comment: 'sample is ...',
       }
       $('#js-getStart').click(function () {
         openWindow(startPage);
