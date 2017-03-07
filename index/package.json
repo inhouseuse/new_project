@@ -1,5 +1,5 @@
 {
-  "name": "ReduxCounter",
+  "name": "index",
   "version": "1.0.0",
   "description": "Sample app using redux and react",
   "main": "index.js",
@@ -19,8 +19,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "react-redux": "^4.4.2",
-    "redux": "^3.4.0"
+    "react-dom": "^15.0.1"
   }
 }
