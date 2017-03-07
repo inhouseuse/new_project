@@ -22140,6 +22140,10 @@ var _Footer = require('./Footer');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
+var _Main = require('./Main');
+
+var _Main2 = _interopRequireDefault(_Main);
+
 var _App = require('../containers/App');
 
 var _App2 = _interopRequireDefault(_App);
@@ -22151,14 +22155,14 @@ var App = function App() {
         'div',
         null,
         _react2.default.createElement(_Header2.default, null),
-        _react2.default.createElement('mainApp', null),
+        _react2.default.createElement(_Main2.default, null),
         _react2.default.createElement(_Footer2.default, null)
     );
 };
 
 exports.default = App;
 
-},{"../containers/App":213,"./Footer":209,"./Header":212,"react":196}],209:[function(require,module,exports){
+},{"../containers/App":214,"./Footer":209,"./Header":212,"./Main":213,"react":196}],209:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22390,7 +22394,6 @@ var Header = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-
             return _react2.default.createElement(
                 "header",
                 { className: "z-depth-1 navbar-fixed" },
@@ -22427,6 +22430,118 @@ var Header = function (_React$Component) {
 exports.default = Header;
 
 },{"react":196}],213:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Main = function (_React$Component) {
+    _inherits(Main, _React$Component);
+
+    function Main() {
+        _classCallCheck(this, Main);
+
+        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+    }
+
+    _createClass(Main, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "main",
+                null,
+                _react2.default.createElement(
+                    "div",
+                    { className: "start-area indigo white-text" },
+                    _react2.default.createElement("div", { className: "height-150" }),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col s12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "center-align" },
+                                _react2.default.createElement(
+                                    "h1",
+                                    null,
+                                    "Strat Application"
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col s12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "center-align" },
+                                _react2.default.createElement(
+                                    "a",
+                                    { className: "waves-effect btn-large pink accent-2", id: "js-getStart", onClick: "" },
+                                    "Get Started"
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement("div", { className: "height-150" })
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col s12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "viewgroup" },
+                                _react2.default.createElement(
+                                    "h1",
+                                    null,
+                                    "Open The Page"
+                                ),
+                                _react2.default.createElement(
+                                    "button",
+                                    { type: "button", className: "btn waves-effect waves-light pink accent-2" },
+                                    "cardview"
+                                ),
+                                _react2.default.createElement(
+                                    "button",
+                                    { type: "button", className: "btn waves-effect waves-light pink accent-2" },
+                                    "listView"
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Main;
+}(_react2.default.Component);
+
+exports.default = Main;
+
+},{"react":196}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22461,7 +22576,7 @@ function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FormApp2.default);
 
-},{"../actions/Actions":207,"./FormApp":214,"react":196,"react-redux":167}],214:[function(require,module,exports){
+},{"../actions/Actions":207,"./FormApp":215,"react":196,"react-redux":167}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22521,7 +22636,7 @@ FormApp.propTypes = {
     value: _react2.default.PropTypes.string.isRequired
 };
 
-},{"../components/FormDisplay":210,"../components/FormInput":211,"react":196}],215:[function(require,module,exports){
+},{"../components/FormDisplay":210,"../components/FormInput":211,"react":196}],216:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -22555,7 +22670,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_App2.default, null)
 ), el);
 
-},{"./components/App":208,"./reducers/Reducers":216,"react":196,"react-dom":38,"react-redux":167,"redux":202}],216:[function(require,module,exports){
+},{"./components/App":208,"./reducers/Reducers":217,"react":196,"react-dom":38,"react-redux":167,"redux":202}],217:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22587,4 +22702,4 @@ function reducer() {
     }
 }
 
-},{}]},{},[215]);
+},{}]},{},[216]);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import FormApp from './FormApp';
+import Header from './FormApp';
 import { send } from '../actions/Actions'
 
 function mapStateToProps(state) {
