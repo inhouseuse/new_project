@@ -1,8 +1,18 @@
 import React from 'react'
+import Button from './Button'
 
 export default class Main extends React.Component {
 
+
     render() {
+
+        let isCardView = true
+
+        function toggleView() {
+            console.log("object");
+            isCardView = !isCardView
+        }
+
         return (
             <main>
                 <div className="start-area indigo white-text">
@@ -26,8 +36,8 @@ export default class Main extends React.Component {
                        <div className="col s12">
                            <div className="viewgroup">
                                <h1>Open The Page</h1>
-                               <button type="button" className="btn waves-effect waves-light pink accent-2">cardview</button>
-                               <button type="button" className="btn waves-effect waves-light pink accent-2">listView</button>
+                               <Button label="CardView" disable={!isCardView} onClick={toggleView} />
+                               <Button label="ListView" disable={isCardView} onClick={toggleView}/>
                            </div>
                        </div>
                     </div>
@@ -35,5 +45,4 @@ export default class Main extends React.Component {
             </main>
         )
     }
-    
 }
