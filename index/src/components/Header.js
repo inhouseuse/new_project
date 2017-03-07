@@ -1,13 +1,18 @@
 import React from 'react'
 
 export default class Header extends React.Component {
+
+    toggleSideBar() {
+        window.alert("sidebar is show")
+    }
+    
     render() {
         return (
             <header className="z-depth-1 navbar-fixed">
                 <nav className="top-nav indigo">
                 <div className="nav-wrapper">
                     <div className="container white-text">
-                    <a className="brand-logo">
+                    <a className="brand-logo" onClick={this.toggleSideBar}>
                         <span className="header-bar"><i className="fa fa-bars" aria-hidden="true"></i></span>
                         IndexPage
                     </a>

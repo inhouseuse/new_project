@@ -22128,6 +22128,105 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Header = require('./Header');
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Footer = require('./Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _App = require('../containers/App');
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement('mainApp', null),
+        _react2.default.createElement(_Footer2.default, null)
+    );
+};
+
+exports.default = App;
+
+},{"../containers/App":213,"./Footer":209,"./Header":212,"react":196}],209:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_React$Component) {
+    _inherits(Footer, _React$Component);
+
+    function Footer() {
+        _classCallCheck(this, Footer);
+
+        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    }
+
+    _createClass(Footer, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "footer",
+                { className: "page-footer black accent-2" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col s12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "center-align white-text" },
+                                "\xA9 2017 Copyright XXX"
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Footer;
+}(_react2.default.Component);
+
+exports.default = Footer;
+
+},{"react":196}],210:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -22184,7 +22283,7 @@ FormDisplay.propTypes = {
     dataList: _react2.default.PropTypes.array.isRequired
 };
 
-},{"react":196}],209:[function(require,module,exports){
+},{"react":196}],211:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22253,7 +22352,81 @@ FormInput.propTypes = {
     handleClick: _react2.default.PropTypes.func.isRequired
 };
 
-},{"react":196}],210:[function(require,module,exports){
+},{"react":196}],212:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Header = function (_React$Component) {
+    _inherits(Header, _React$Component);
+
+    function Header() {
+        _classCallCheck(this, Header);
+
+        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    }
+
+    _createClass(Header, [{
+        key: "toggleSideBar",
+        value: function toggleSideBar() {
+            window.alert("sidebar is show");
+        }
+    }, {
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "header",
+                { className: "z-depth-1 navbar-fixed" },
+                _react2.default.createElement(
+                    "nav",
+                    { className: "top-nav indigo" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "nav-wrapper" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "container white-text" },
+                            _react2.default.createElement(
+                                "a",
+                                { className: "brand-logo", onClick: this.toggleSideBar },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "header-bar" },
+                                    _react2.default.createElement("i", { className: "fa fa-bars", "aria-hidden": "true" })
+                                ),
+                                "IndexPage"
+                            ),
+                            _react2.default.createElement("ul", { id: "nav-mobile", className: "right hide-on-med-and-down" })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Header;
+}(_react2.default.Component);
+
+exports.default = Header;
+
+},{"react":196}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22274,18 +22447,10 @@ var _Actions = require('../actions/Actions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//memberへのアクセス
-
-// グローバルなstateから必要な値を取ってきて、コンポーネントのthis.propsとして渡す処理
 function mapStateToProps(state) {
-    // return {
-    //     value: state.value
-    // };
     return state;
 }
 
-// clickでactionを飛ばす
-//classへのアクセス
 function mapDispatchToProps(dispatch) {
     return {
         onClick: function onClick(value) {
@@ -22294,10 +22459,9 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-// connect関数でReduxとReactコンポーネントを繋ぐ
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FormApp2.default);
 
-},{"../actions/Actions":207,"./FormApp":211,"react":196,"react-redux":167}],211:[function(require,module,exports){
+},{"../actions/Actions":207,"./FormApp":214,"react":196,"react-redux":167}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22357,7 +22521,7 @@ FormApp.propTypes = {
     value: _react2.default.PropTypes.string.isRequired
 };
 
-},{"../components/FormDisplay":208,"../components/FormInput":209,"react":196}],212:[function(require,module,exports){
+},{"../components/FormDisplay":210,"../components/FormInput":211,"react":196}],215:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -22376,7 +22540,7 @@ var _Reducers2 = _interopRequireDefault(_Reducers);
 
 var _redux = require('redux');
 
-var _App = require('./containers/App');
+var _App = require('./components/App');
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -22391,7 +22555,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_App2.default, null)
 ), el);
 
-},{"./containers/App":210,"./reducers/Reducers":213,"react":196,"react-dom":38,"react-redux":167,"redux":202}],213:[function(require,module,exports){
+},{"./components/App":208,"./reducers/Reducers":216,"react":196,"react-dom":38,"react-redux":167,"redux":202}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22423,4 +22587,4 @@ function reducer() {
     }
 }
 
-},{}]},{},[212]);
+},{}]},{},[215]);
