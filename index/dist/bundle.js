@@ -20642,7 +20642,7 @@ var Header = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     "nav",
-                    null,
+                    { className: true },
                     _react2.default.createElement(
                         "div",
                         { className: "nav-wrapper" },
