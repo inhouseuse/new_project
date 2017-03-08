@@ -20503,7 +20503,7 @@ var _index = require('../Header/index');
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = require('../Nav/index');
+var _index3 = require('../Sidebar/index');
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -20552,7 +20552,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"../Footer/index":179,"../Header/index":180,"../Main/index":181,"../Nav/index":182,"react":177}],179:[function(require,module,exports){
+},{"../Footer/index":179,"../Header/index":180,"../Main/index":181,"../Sidebar/index":182,"react":177}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20587,7 +20587,7 @@ var Footer = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'footer',
                 null,
                 _react2.default.createElement(
                     'h1',
@@ -20604,7 +20604,7 @@ var Footer = function (_React$Component) {
 exports.default = Footer;
 
 },{"react":177}],180:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -20612,7 +20612,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -20635,15 +20635,45 @@ var Header = function (_React$Component) {
     }
 
     _createClass(Header, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                "header",
                 null,
                 _react2.default.createElement(
-                    'h1',
+                    "nav",
                     null,
-                    'Header'
+                    _react2.default.createElement(
+                        "div",
+                        { className: "nav-wrapper" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#!", className: "brand-logo" },
+                            "Logo"
+                        ),
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "right hide-on-med-and-down" },
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "a",
+                                    { href: "sass.html" },
+                                    "Sass"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                null,
+                                _react2.default.createElement(
+                                    "a",
+                                    { href: "badges.html" },
+                                    "Components"
+                                )
+                            )
+                        )
+                    )
                 )
             );
         }
@@ -20689,7 +20719,7 @@ var Main = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'main',
                 null,
                 _react2.default.createElement(
                     'h1',
@@ -20706,8 +20736,63 @@ var Main = function (_React$Component) {
 exports.default = Main;
 
 },{"react":177}],182:[function(require,module,exports){
-arguments[4][179][0].apply(exports,arguments)
-},{"dup":179,"react":177}],183:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Footer
+
+
+var Sidebar = function (_React$Component) {
+    _inherits(Sidebar, _React$Component);
+
+    function Sidebar() {
+        _classCallCheck(this, Sidebar);
+
+        return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+    }
+
+    _createClass(Sidebar, [{
+        key: "render",
+
+
+        // constructor() {
+
+        // }
+
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "Sidebar " },
+                _react2.default.createElement(
+                    "h1",
+                    null,
+                    "div"
+                )
+            );
+        }
+    }]);
+
+    return Sidebar;
+}(_react2.default.Component);
+
+exports.default = Sidebar;
+
+},{"react":177}],183:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');

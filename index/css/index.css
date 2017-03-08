@@ -10,122 +10,17 @@ body {
   flex-direction: column;
 }
 
-i {  
-  font-family:FontAwesome !important;
-  font-style:normal;  
+.Sidebar {
+  position: fixed;
+  width: 300px;
+  top: 0;
+  left: 0;
+  background-color: red;
+  transform: translateX(-100%);
+  transition: transform 300ms linear;
 }
 
-main {
-  flex: 1 0 auto;
-}
-
-.page-title {
-  font-size: 36px;
-  
-}
-
-.height-150 {
-  height: 150px;
-}
-
-.header-bar {
-  cursor: pointer;
-}
-
-
-.start-area {
-  width: 100%;
-  
-  /*background-image: linear-gradient(-90deg, #FF00A1, #F6FF00);*/
-  /*background-image: linear-gradient(-45deg, #F6F6F6, #fce4ec);*/
-  /*background-image: radial-gradient( #26A69A, #F6F6F6);*/
-  /*background-image: linear-gradient(-90deg, #ffffff, #000000);*/
-  /*opacity: 0.5;*/
-  /*animation: huerotator 5s infinite alternate;*/
-}
-
-.btn-transparent {
-  border: 1px solid #ffffff;
-  background: transparent;
-  border-radius: 2px;
-  /*opacity: 0;*/
-}
-
-.card {
-  /*transform: translateX(300%);*/
-}
-
-.collection-image {
-  width: 150px;
-  height: 100px;
-}
-
-@keyframes huerotator {
-  0% {
-    -webkit-filter: hue-rotate(0deg);
-    filter: hue-rotate(0deg);
-  }
-
-  100% {
-    -webkit-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
-}
-.slide_in_from_bottom {
-    animation-name: slide_in_from_bottom;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-delay: 0.3s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-
-@keyframes slide_in_from_bottom {
-    0% {
-        /*opacity: 0;*/
-        transform: translateX(300%);
-    }
-    100% {
-        /*opacity: 1;      */
-        transform: translateX(0px);
-    }
-}
-
-.fade_in {
-    animation-name: fade_in;
-    animation-duration: 1.5s;
-    animation-timing-function: ease;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-
-@keyframes fade_in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;      
-    }
-}
-
-.viewgroup {
-  display: flex;
-  align-items: baseline;
-}
-.viewgroup :first-child {
-  margin-right: auto;
-}
-
-.collection-group {
-  display: flex;
-  align-items: center;
-}
-
-.collection-group :last-child {
-  margin-left: auto;
+.slideLeftToRight {
+  transform: none;
+  transition: transform 300ms linear;
 }
