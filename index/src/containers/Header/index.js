@@ -7,11 +7,16 @@ class Header extends React.Component {
             <header>
                  <nav>
                     <div className="nav-wrapper">
-                        <a href="#!" className="brand-logo">Logo</a>
-                        <ul className="right hide-on-med-and-down">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                        </ul>
+                        <div className="container">
+                            <a href="#!" className="brand-logo"><i className="fa fa-bars" aria-hidden="true"></i> IndexPage</a>
+                            {/*<form>
+                                <div className="input-field right">
+                                    <input id="search" type="search" />
+                                    <label className="label-icon" for="search"><i className="fa fa-search small" aria-hidden="true"></i></label>
+                                    <i className="material-icons">close</i>
+                                </div>
+                            </form>*/}
+                        </div>
                     </div>
                 </nav>
             </header>

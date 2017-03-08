@@ -3,13 +3,9 @@ import React from 'react'
 
 class Sidebar extends React.Component {
 
-    // constructor() {
-        
-    // }
-
     render() {
         return (
-            <div className="Sidebar ">
+            <div className="sidebar">
                 <h1>div</h1>
             </div>
         )

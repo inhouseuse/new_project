@@ -10,7 +10,7 @@ body {
   flex-direction: column;
 }
 
-.Sidebar {
+.sidebar {
   position: fixed;
   width: 300px;
   top: 0;
