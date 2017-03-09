@@ -13,7 +13,9 @@ class Header extends React.Component {
                         </div>
                     </div>
                     <div className="nav-content teal lighten-2">
-                        <Tabs />
+                        <div className="container">
+                            <Tabs />
+                        </div>
                     </div>
                 </nav>
             </header>

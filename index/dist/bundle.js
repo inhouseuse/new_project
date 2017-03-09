@@ -20714,7 +20714,11 @@ var Header = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'nav-content teal lighten-2' },
-                        _react2.default.createElement(_index2.default, null)
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'container' },
+                            _react2.default.createElement(_index2.default, null)
+                        )
                     )
                 )
             );
