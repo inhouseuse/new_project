@@ -20487,6 +20487,75 @@ module.exports = traverseAllChildren;
 module.exports = require('./lib/React');
 
 },{"./lib/React":155}],178:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // components/Card
+
+
+var Card = function (_React$Component) {
+    _inherits(Card, _React$Component);
+
+    function Card() {
+        _classCallCheck(this, Card);
+
+        return _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).apply(this, arguments));
+    }
+
+    _createClass(Card, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "card col s12 l4" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "card-image" },
+                    _react2.default.createElement("img", { src: this.props.data.imgUrl }),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "card-content" },
+                        _react2.default.createElement(
+                            "h4",
+                            null,
+                            this.props.data.title
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "card-action" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: this.props.data.url },
+                            "Open"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Card;
+}(_react2.default.Component);
+
+exports.default = Card;
+
+},{"react":177}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20521,7 +20590,7 @@ var Tab = function (_React$Component) {
         key: 'render',
         value: function render() {
 
-            var isActive = this.props.data.groupName === 'group2' ? 'tab--active' : '';
+            var isActive = this.props.data.groupName === 'ALL' ? 'tab--active' : '';
 
             return _react2.default.createElement(
                 'li',
@@ -20536,7 +20605,7 @@ var Tab = function (_React$Component) {
 
 exports.default = Tab;
 
-},{"react":177}],179:[function(require,module,exports){
+},{"react":177}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20602,7 +20671,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"../Footer/index":180,"../Header/index":181,"../Main/index":182,"../Sidebar/index":183,"react":177}],180:[function(require,module,exports){
+},{"../Footer/index":182,"../Header/index":183,"../Main/index":184,"../Sidebar/index":185,"react":177}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20612,6 +20681,80 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = require('../../components/Card/index');
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Cards
+
+
+var Cards = function (_React$Component) {
+    _inherits(Cards, _React$Component);
+
+    function Cards() {
+        _classCallCheck(this, Cards);
+
+        return _possibleConstructorReturn(this, (Cards.__proto__ || Object.getPrototypeOf(Cards)).apply(this, arguments));
+    }
+
+    _createClass(Cards, [{
+        key: 'render',
+        value: function render() {
+            var li_group = [];
+            var li_page = [];
+
+            Window.contentslist.map(function (group, index) {
+                group.pages.map(function (page, index) {
+                    li_page.push(_react2.default.createElement(_index2.default, { key: group.groupName + page.title, idx: index, data: page }));
+                });
+                li_group.push(_react2.default.createElement(
+                    'li',
+                    { key: group.groupName },
+                    _react2.default.createElement(
+                        'h2',
+                        null,
+                        group.groupName
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        li_page
+                    )
+                ));
+            });
+
+            return _react2.default.createElement(
+                'ul',
+                null,
+                li_group
+            );
+        }
+    }]);
+
+    return Cards;
+}(_react2.default.Component);
+
+exports.default = Cards;
+
+},{"../../components/Card/index":178,"react":177}],182:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -20634,15 +20777,15 @@ var Footer = function (_React$Component) {
     }
 
     _createClass(Footer, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'footer',
-                null,
+                "footer",
+                { className: "container" },
                 _react2.default.createElement(
-                    'h1',
+                    "h1",
                     null,
-                    'Footer'
+                    "Footer"
                 )
             );
         }
@@ -20653,7 +20796,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":177}],181:[function(require,module,exports){
+},{"react":177}],183:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20730,7 +20873,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"../Tabs/index":184,"react":177}],182:[function(require,module,exports){
+},{"../Tabs/index":186,"react":177}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20742,6 +20885,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _index = require('../Cards/index');
+
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20766,11 +20913,20 @@ var Main = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'main',
-                null,
+                { className: 'container' },
                 _react2.default.createElement(
                     'h1',
                     null,
                     'Main'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col s12' },
+                        _react2.default.createElement(_index2.default, null)
+                    )
                 )
             );
         }
@@ -20781,7 +20937,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"react":177}],183:[function(require,module,exports){
+},{"../Cards/index":181,"react":177}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20832,7 +20988,7 @@ var Sidebar = function (_React$Component) {
 
 exports.default = Sidebar;
 
-},{"react":177}],184:[function(require,module,exports){
+},{"react":177}],186:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20891,7 +21047,7 @@ var Tabs = function (_React$Component) {
 
 exports.default = Tabs;
 
-},{"../../components/Tab":178,"react":177}],185:[function(require,module,exports){
+},{"../../components/Tab":179,"react":177}],187:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -20910,4 +21066,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_index2.default, null), document.getElementById('root')); // EntryPoint
 
-},{"./containers/App/index":179,"react":177,"react-dom":26}]},{},[185]);
+},{"./containers/App/index":180,"react":177,"react-dom":26}]},{},[187]);

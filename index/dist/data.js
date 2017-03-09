@@ -1,75 +1,129 @@
 Window.contentslist = [
     {
-        groupName: 'group1',
+        groupName: 'Group1',
+        groupColor: '#F44336',
         pages: [
             {
                 title: 'page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
             },
             {
                 title: 'page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
 
             },
             {
                 title: 'page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
 
             },
         ]
     },
     {
-        groupName: 'group2',
+        groupName: 'Group2',
+        groupColor: '#9C27B0',
         pages: [
             {
                 title: 'page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
             },
             {
                 title: 'page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
 
             },
             {
                 title: 'page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
 
             },
         ]
     },
     {
-        groupName: 'group3',
+        groupName: 'Group3',
+        groupColor: '#EF6C00',
         pages: [
             {
                 title: 'page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
             },
             {
                 title: 'page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
 
             },
             {
                 title: 'page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
-                imgUrl: 'img/300x200.png',
+                imgUrl: './index/img/300x200.png',
+            },
+        ]
+    },
+    {
+        groupName: 'Group4',
+        groupColor: '#009688',
+        pages: [
+            {
+                title: 'page1',
+                desc: 'this page is ....',
+                url: 'projects_name1/index.html',
+                imgUrl: './index/img/300x200.png',
+            },
+            {
+                title: 'page2',
+                desc: 'this page is ....',
+                url: 'projects_name2/index.html',
+                imgUrl: './index/img/300x200.png',
+
+            },
+            {
+                title: 'page3',
+                desc: 'this page is ....',
+                url: 'projects_name3/index.html',
+                imgUrl: './index/img/300x200.png',
+
+            },
+        ]
+    },
+    {
+        groupName: 'Group5',
+        groupColor: '#795548',
+        pages: [
+            {
+                title: 'page1',
+                desc: 'this page is ....',
+                url: 'projects_name1/index.html',
+                imgUrl: './index/img/300x200.png',
+            },
+            {
+                title: 'page2',
+                desc: 'this page is ....',
+                url: 'projects_name2/index.html',
+                imgUrl: './index/img/300x200.png',
+
+            },
+            {
+                title: 'page3',
+                desc: 'this page is ....',
+                url: 'projects_name3/index.html',
+                imgUrl: './index/img/300x200.png',
 
             },
         ]

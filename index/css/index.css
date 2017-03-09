@@ -23,12 +23,20 @@ body {
   line-height: 2;
   cursor: pointer;
 }
+.tab-flat:hover {
+  opacity: 0.5;
+}
+
 .tab--active {
   color: #ffffff;  
   border: 3px solid #ff4081 ;
   border-top: transparent;
   border-right: transparent;
   border-left: transparent;
+}
+.tab--active:hover {
+  opacity: 1;
+  cursor: auto;
 }
 
 
