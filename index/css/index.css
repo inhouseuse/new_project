@@ -10,6 +10,28 @@ body {
   flex-direction: column;
 }
 
+.tab-flat-group {
+  display: flex;
+  /*justify-content: space-around;*/
+  
+}
+
+.tab-flat {
+  color: #f1f1f1;
+  text-align: center;
+  flex-grow: 1;
+  line-height: 2;
+  cursor: pointer;
+}
+.tab--active {
+  color: #ffffff;  
+  border: 3px solid #ff4081 ;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+}
+
+
 .sidebar {
   position: fixed;
   width: 300px;

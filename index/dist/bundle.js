@@ -20499,6 +20499,56 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // components/Tab
+
+
+var Tab = function (_React$Component) {
+    _inherits(Tab, _React$Component);
+
+    function Tab() {
+        _classCallCheck(this, Tab);
+
+        return _possibleConstructorReturn(this, (Tab.__proto__ || Object.getPrototypeOf(Tab)).apply(this, arguments));
+    }
+
+    _createClass(Tab, [{
+        key: 'render',
+        value: function render() {
+
+            var isActive = this.props.data.groupName === 'group2' ? 'tab--active' : '';
+
+            return _react2.default.createElement(
+                'li',
+                { className: 'tab-flat ' + isActive },
+                this.props.data.groupName
+            );
+        }
+    }]);
+
+    return Tab;
+}(_react2.default.Component);
+
+exports.default = Tab;
+
+},{"react":177}],179:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _index = require('../Header/index');
 
 var _index2 = _interopRequireDefault(_index);
@@ -20552,7 +20602,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"../Footer/index":179,"../Header/index":180,"../Main/index":181,"../Sidebar/index":182,"react":177}],179:[function(require,module,exports){
+},{"../Footer/index":180,"../Header/index":181,"../Main/index":182,"../Sidebar/index":183,"react":177}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20603,8 +20653,8 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":177}],180:[function(require,module,exports){
-"use strict";
+},{"react":177}],181:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -20612,9 +20662,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _index = require('../Tabs/index');
+
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20635,27 +20689,32 @@ var Header = function (_React$Component) {
     }
 
     _createClass(Header, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "header",
-                null,
+                'header',
+                { className: 'teal lighten-2' },
                 _react2.default.createElement(
-                    "nav",
-                    { className: true },
+                    'nav',
+                    { className: 'extended-nav teal lighten-2' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "nav-wrapper" },
+                        'div',
+                        { className: 'nav-wrapper' },
                         _react2.default.createElement(
-                            "div",
-                            { className: "container" },
+                            'div',
+                            { className: 'container' },
                             _react2.default.createElement(
-                                "a",
-                                { href: "#!", className: "brand-logo" },
-                                _react2.default.createElement("i", { className: "fa fa-bars", "aria-hidden": "true" }),
-                                " IndexPage"
+                                'a',
+                                { href: '#!', className: 'brand-logo' },
+                                _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' }),
+                                ' IndexPage'
                             )
                         )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'nav-content teal lighten-2' },
+                        _react2.default.createElement(_index2.default, null)
                     )
                 )
             );
@@ -20667,7 +20726,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":177}],181:[function(require,module,exports){
+},{"../Tabs/index":184,"react":177}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20718,7 +20777,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"react":177}],182:[function(require,module,exports){
+},{"react":177}],183:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20769,7 +20828,66 @@ var Sidebar = function (_React$Component) {
 
 exports.default = Sidebar;
 
-},{"react":177}],183:[function(require,module,exports){
+},{"react":177}],184:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Tab = require('../../components/Tab');
+
+var _Tab2 = _interopRequireDefault(_Tab);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // containers/Tabs
+
+
+var Tabs = function (_React$Component) {
+    _inherits(Tabs, _React$Component);
+
+    function Tabs() {
+        _classCallCheck(this, Tabs);
+
+        return _possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).apply(this, arguments));
+    }
+
+    _createClass(Tabs, [{
+        key: 'render',
+        value: function render() {
+            var li = [];
+            var all = { groupName: 'All' };
+
+            li.push(_react2.default.createElement(_Tab2.default, { key: 'all', data: all }));
+            Window.contentslist.map(function (item, index) {
+                li.push(_react2.default.createElement(_Tab2.default, { key: item.groupName, idx: index, data: item }));
+            });
+
+            return _react2.default.createElement(
+                'ul',
+                { className: 'tab-flat-group teal lighten-2' },
+                li
+            );
+        }
+    }]);
+
+    return Tabs;
+}(_react2.default.Component);
+
+exports.default = Tabs;
+
+},{"../../components/Tab":178,"react":177}],185:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -20788,4 +20906,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_index2.default, null), document.getElementById('root')); // EntryPoint
 
-},{"./containers/App/index":178,"react":177,"react-dom":26}]},{},[183]);
+},{"./containers/App/index":179,"react":177,"react-dom":26}]},{},[185]);

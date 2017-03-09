@@ -3,10 +3,13 @@ import React from 'react'
 
 class Tab extends React.Component {
     render() {
+
+        const isActive = this.props.data.groupName === 'group2' ? 'tab--active' : ''
+
         return (
-            <div>
-                Tab
-            </div>        
+            <li className={`tab-flat ${isActive}`}>
+                {this.props.data.groupName}
+            </li>        
         )
     }
 }

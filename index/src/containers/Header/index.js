@@ -1,15 +1,19 @@
 // Header
 import React from 'react'
+import Tabs from '../Tabs/index'
 
 class Header extends React.Component {
     render() {
         return (
-            <header>
-                 <nav className>
+            <header className="teal lighten-2">
+                 <nav className="extended-nav teal lighten-2">
                     <div className="nav-wrapper">
                         <div className="container">
                             <a href="#!" className="brand-logo"><i className="fa fa-bars" aria-hidden="true"></i> IndexPage</a>
                         </div>
+                    </div>
+                    <div className="nav-content teal lighten-2">
+                        <Tabs />
                     </div>
                 </nav>
             </header>
