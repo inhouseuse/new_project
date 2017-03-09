@@ -12,134 +12,15 @@
 </head>
 
 <body>
-  <div id="root"></div>
-
-  <main>
-    <div class="container">
-      <div id="app-index">
-        <div class="row">
-          <div class="col s12">
-            <div class="viewgroup">
-              <h1>Open the Page</h1>
-              <button type="button" class="btn waves-effect waves-light pink accent-2" v-bind:class="{ disabled: !isCardView }" @click="toggleView()">cardview</button>
-              <button type="button" class="btn waves-effect waves-light pink accent-2" v-bind:class="{ disabled: isCardView }" @click="toggleView()">listView</button>
-            </div>
-          </div>
-          <template v-if="isCardView">
-            <template v-for="page in pages">
-              <div class="col l4 m6 s12">
-                <div class="card js-card">
-                  <div class="card-image">
-                    <img v-bind:src="page.imageUrl" v-bind:alt="page.name" v-on:click="openWindowL(page)">
-                    <span class="card-title">{{ page.name }}</span>
-                  </div>
-                  <div class="card-action">
-                    <div class="center-align">
-                      <a class="waves-effect waves-light btn pink accent-2" v-on:click="openWindowL(page)">Open</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </template>
-          </template>
-          <template v-if="!isCardView">
-              <div class="col s12">
-                <ul class="collection">
-                  <template v-for="page in pages">
-                    <li class="collection-item collection-group">
-                      <div>
-                        <p>{{ page.name }}</p>
-                        <p class="pink-text accent-1-text">{{ page.comment }}</p>
-                      </div>
-                      <a class="waves-effect waves-light btn pink accent-2" v-on:click="openWindowL(page)">Open</a>
-                    </li>
-                  </template>
-                </div>
-              </div>
-          </template>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script src="index/lib/jQuery/jquery-3.1.1.min.js"></script>
-  <script src="index/lib/vue/vue.min.js"></script>
+  <div id="root"></div>  
   <script src="index/dist/bundle.js"></script>
+  <script src="index/lib/jQuery/jquery-3.1.1.min.js"></script>
   <script>
-    'use strict';
 
-    $(function () {
-
-      // WindowOpenを呼び出す
-      var openWindow = function (page) {
-        var features =
-          'top=0, left=0, width=1024, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
-        window.open(page.url, '_blank', features);
-      }
-
-      new Vue({
-        el: '#app-index',
-        data: {
-          msg: 'aaa',
-          isCardView: true,
-          pages: [{
-              name: 'SamplePage1',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-            {
-              name: 'SamplePage2',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-            {
-              name: 'SamplePage3',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-            {
-              name: 'SamplePage4',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-            {
-              name: 'SamplePage5',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-            {
-              name: 'SamplePage6',
-              url: 'dist/sample.html',
-              imageUrl: 'index/img/300x200.png',
-              comment: 'sample is ...',
-            },
-          ]
-        },
-        methods: {
-          openWindowL: function (page) {
-            openWindow(page);
-          },
-          toggleView: function () {
-            this.isCardView = !this.isCardView;
-          }
-        }
-      });
-
-      // スタートページの呼び出し
-      var startPage = {
-        name: 'SamplePage',
-        url: 'dist/sample.html',
-      }
-      $('#js-getStart').click(function () {
-        openWindow(startPage);
-      });
-
-    });
+    $('.brand-logo').click(function(){
+      $('.sidebar').toggleClass('slideLeftToRight')
+    })
+    
   </script>
 </body>
 
