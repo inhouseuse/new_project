@@ -4,14 +4,16 @@ import Cards from '../Cards/index'
 
 class Main extends React.Component {
     render() {
+
+        const space = {
+            height: '20px'
+        }
+
         return (
             <main className="container">
-                <h1>Main</h1>
-                <div className="row">
-                    <div className="col s12">
-                        <Cards />
-                    </div>
-                </div>
+                <div style={space}></div>
+                <h1>Start App</h1>
+                <Cards />
             </main>
         )
     }

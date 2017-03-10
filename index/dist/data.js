@@ -4,20 +4,20 @@ Window.contentslist = [
         groupColor: '#F44336',
         pages: [
             {
-                title: 'page1',
+                title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
                 imgUrl: './index/img/300x200.png',
             },
             {
-                title: 'page2',
+                title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
                 imgUrl: './index/img/300x200.png',
 
             },
             {
-                title: 'page3',
+                title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
                 imgUrl: './index/img/300x200.png',
@@ -30,20 +30,20 @@ Window.contentslist = [
         groupColor: '#9C27B0',
         pages: [
             {
-                title: 'page1',
+                title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
                 imgUrl: './index/img/300x200.png',
             },
             {
-                title: 'page2',
+                title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
                 imgUrl: './index/img/300x200.png',
 
             },
             {
-                title: 'page3',
+                title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
                 imgUrl: './index/img/300x200.png',
@@ -56,20 +56,20 @@ Window.contentslist = [
         groupColor: '#EF6C00',
         pages: [
             {
-                title: 'page1',
+                title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
                 imgUrl: './index/img/300x200.png',
             },
             {
-                title: 'page2',
+                title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
                 imgUrl: './index/img/300x200.png',
 
             },
             {
-                title: 'page3',
+                title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
                 imgUrl: './index/img/300x200.png',
@@ -81,20 +81,20 @@ Window.contentslist = [
         groupColor: '#009688',
         pages: [
             {
-                title: 'page1',
+                title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
                 imgUrl: './index/img/300x200.png',
             },
             {
-                title: 'page2',
+                title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
                 imgUrl: './index/img/300x200.png',
 
             },
             {
-                title: 'page3',
+                title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
                 imgUrl: './index/img/300x200.png',
@@ -107,20 +107,20 @@ Window.contentslist = [
         groupColor: '#795548',
         pages: [
             {
-                title: 'page1',
+                title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
                 imgUrl: './index/img/300x200.png',
             },
             {
-                title: 'page2',
+                title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
                 imgUrl: './index/img/300x200.png',
 
             },
             {
-                title: 'page3',
+                title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
                 imgUrl: './index/img/300x200.png',
