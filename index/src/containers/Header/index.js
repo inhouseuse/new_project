@@ -14,7 +14,7 @@ class Header extends React.Component {
                     </div>
                     <div className="nav-content teal lighten-2">
                         <div className="container">
-                            <Tabs />
+                            <Tabs selectedTabIndex={this.props.selectedTabIndex} selectTab={this.props.selectTab}/>
                         </div>
                     </div>
                 </nav>

@@ -1,7 +1,7 @@
-// components/Card
+// components/List
 import React from 'react'
 
-class Card extends React.Component {
+class List extends React.Component {
 
     render() {
 
@@ -31,4 +31,4 @@ class Card extends React.Component {
     }
 }
 
-export default Card
+export default List

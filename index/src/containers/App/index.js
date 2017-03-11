@@ -1,21 +1,25 @@
-// containers/App
-import React from 'react'
-import Header from '../Header/index'
-import Sidebar from '../Sidebar/index'
-import Main from '../Main/index'
-import Footer from '../Footer/index'
+import React from 'react';
+import { connect } from 'react-redux';
+import IndexApp from '../Index/index';
+import {select} from '../../actions/index'
+import {toggelView} from '../../actions/index'
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <Sidebar />
-                <Main />
-                <Footer />
-            </div>
-        )
+
+// グローバルなstateから必要な値を取ってきて、コンポーネントのthis.propsとして渡す処理
+function mapStateToProps(state) {
+    return state;
+}
+
+// clickでactionを飛ばす
+function mapDispatchToProps(dispatch) {
+    return {
+        selectTab: (value) => { dispatch(select(value)) },
+        toggleViews: () => { dispatch(toggleView()) },
     }
 }
 
-export default App
+// connect関数でReduxとReactコンポーネントを繋ぐ
+export default connect (
+    mapStateToProps,
+    mapDispatchToProps
+)(IndexApp)

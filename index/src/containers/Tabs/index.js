@@ -7,11 +7,11 @@ class Tabs extends React.Component {
 
     render() {
         const li = []
-        const all = { groupName: 'All' }
+        const all = [{ groupName: 'All' }]
+        let tablist = all.concat(Window.contentslist)
 
-        li.push(<Tab key='all' data={all} />)
-        Window.contentslist.map((item, index)=>{
-            li.push(<Tab key={item.groupName} idx={index} data={item} />)
+        tablist.map((item, index)=>{
+            li.push(<Tab key={item.groupName} idx={index} data={item} selectedTabIndex={this.props.selectedTabIndex} selectTab={this.props.selectTab} />)
         });
 
         return (
