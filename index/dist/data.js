@@ -1,3 +1,4 @@
+// ページ情報を集約したリスト
 Window.contentslist = [
     {
         groupName: 'Group1',
@@ -78,7 +79,7 @@ Window.contentslist = [
     },
     {
         groupName: 'Group4',
-        groupColor: '#009688',
+        groupColor: '#448aff',
         pages: [
             {
                 title: 'Page1',
@@ -129,3 +130,9 @@ Window.contentslist = [
         ]
     },
 ]
+
+// 別ウィンドウ起動用のファンクション
+Window.OpenExternalLink = function(url) {
+    var features = 'top=0, left=0, width=1136, height=672, resizable=yes, location=no, status=yes, scrollbars=yes, directories=no, titlebar=no, toolbar=no';
+    window.open(url, '_blank', features);
+}

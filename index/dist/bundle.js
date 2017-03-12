@@ -22637,6 +22637,7 @@ var Card = function (_React$Component) {
     _createClass(Card, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
 
             var bgcolor = {
                 background: this.props.color
@@ -22670,8 +22671,11 @@ var Card = function (_React$Component) {
                             { className: 'card-action center-align' },
                             _react2.default.createElement(
                                 'a',
-                                { href: this.props.data.url, className: 'waves-effect waves-light btn pink accent-2' },
-                                'Open'
+                                { onClick: function onClick() {
+                                        Window.OpenExternalLink(_this2.props.data.url);
+                                    }, className: 'waves-effect waves-light btn pink accent-2' },
+                                'Open\xA0\xA0',
+                                _react2.default.createElement('i', { className: 'fa fa-external-link', 'aria-hidden': 'true' })
                             )
                         )
                     )
@@ -22719,6 +22723,7 @@ var List = function (_React$Component) {
     _createClass(List, [{
         key: "render",
         value: function render() {
+            var _this2 = this;
 
             var bgcolor = {
                 background: this.props.color
@@ -22729,12 +22734,32 @@ var List = function (_React$Component) {
                 { className: "collection-item" },
                 _react2.default.createElement(
                     "div",
-                    null,
-                    this.props.data.title,
+                    { className: "flexCenter" },
                     _react2.default.createElement(
-                        "a",
-                        { href: this.props.data.url, className: "secondary-content" },
-                        _react2.default.createElement("i", { className: "fa fa-external-link", "aria-hidden": "true" })
+                        "div",
+                        null,
+                        _react2.default.createElement(
+                            "h5",
+                            null,
+                            this.props.data.title
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            this.props.data.desc
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "marginLeft_auto" },
+                        _react2.default.createElement(
+                            "a",
+                            { onClick: function onClick() {
+                                    Window.OpenExternalLink(_this2.props.data.url);
+                                }, className: "secondary-content waves-effect waves-light btn pink accent-2" },
+                            "Open\xA0\xA0",
+                            _react2.default.createElement("i", { className: "fa fa-external-link", "aria-hidden": "true" })
+                        )
                     )
                 )
             );
@@ -23084,7 +23109,7 @@ var Main = function (_React$Component) {
                     _react2.default.createElement(
                         'h1',
                         null,
-                        'Start App'
+                        'Open Pages'
                     ),
                     _react2.default.createElement(
                         'div',
@@ -23303,7 +23328,11 @@ var Views = function (_React$Component) {
                 viewList.map(function (group, index) {
                     var li_page = [];
                     var group_color = {
-                        color: group.groupColor
+                        backgroundColor: group.groupColor,
+                        borderColor: group.groupColor
+                    };
+                    var space = {
+                        height: "40px"
                     };
 
                     {
@@ -23321,15 +23350,16 @@ var Views = function (_React$Component) {
                         'li',
                         { key: group.groupName },
                         _react2.default.createElement(
-                            'h3',
-                            { style: group_color },
+                            'div',
+                            { className: 'groupTitle', style: group_color },
                             group.groupName
                         ),
                         _react2.default.createElement(
                             'ul',
                             { className: 'row ' + (isCardView ? '' : 'collection') },
                             li_page
-                        )
+                        ),
+                        _react2.default.createElement('div', { style: space })
                     );
                 })
             );

@@ -13,7 +13,7 @@ class Main extends React.Component {
             <main className="container">
                 <div style={space}></div>
                 <div className="flexBaseline">
-                    <h1>Start App</h1>
+                    <h1>Open Pages</h1>
                     <div className="buttonGroup">
                         <div onClick={() => {this.props.toggleViewMode()}} className={`toggleViewButton ${this.props.isCardView === false ? 'toggleViewButton--active' : ''}`} >
                             <i className="fa fa-th-list" aria-hidden="true"></i>

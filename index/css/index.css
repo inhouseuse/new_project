@@ -25,6 +25,10 @@ body {
 }
 .tab-flat:hover {
   opacity: 0.5;
+  border: 5px solid #ff4081 ;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
 }
 
 .tab--active {
@@ -68,11 +72,9 @@ body {
 
 @keyframes bottomUp {
     0% {
-        /*opacity: 0;*/
         transform: translateY(100%);
     }
     100% {
-        /*opacity: 1;*/
         transform: translateY(0%);
     }
 }
@@ -80,6 +82,14 @@ body {
 .flexBaseline {
   display: flex;
   align-items: baseline;
+}
+.flexCenter {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+}
+.marginLeft_auto {
+  margin-left: auto;
 }
 
 .buttonGroup {
@@ -96,5 +106,17 @@ body {
 }
 
 .toggleViewButton--active {
-  background: #ff4081
+  background: #ff4081;
+  pointer-events : none;
+}
+
+.groupTitle {
+  color: #f1f1f1;
+  border: 2px solid #000;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 2;
+  border-radius: 5px;
 }

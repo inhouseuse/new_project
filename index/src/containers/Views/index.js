@@ -16,7 +16,11 @@ class Views extends React.Component {
                 {viewList.map((group, index) => {
                     const li_page = []
                     const group_color = {
-                       color: group.groupColor
+                       backgroundColor: group.groupColor,
+                       borderColor: group.groupColor
+                    }
+                    const space = {
+                        height: "40px"
                     }
 
                     {group.pages.map((page, index)=> {
@@ -35,10 +39,14 @@ class Views extends React.Component {
 
                     return (
                         <li key={group.groupName}>
-                            <h3 style={group_color}>{group.groupName}</h3>
+                            
+                            <div className="groupTitle" style={group_color}>
+                                {group.groupName}
+                            </div>
                             <ul className={`row ${isCardView ? '' : 'collection'}`}>
                                 {li_page}
                             </ul>
+                            <div style={space}></div>
                         </li>
                     )
                 })}

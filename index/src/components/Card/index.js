@@ -22,7 +22,10 @@ class Card extends React.Component {
                             <h5>{this.props.data.title}</h5>
                         </div>
                         <div className="card-action center-align">
-                            <a href={this.props.data.url} className="waves-effect waves-light btn pink accent-2">Open</a>
+                            <a onClick={() => {Window.OpenExternalLink(this.props.data.url)}} className="waves-effect waves-light btn pink accent-2">
+                                Open&nbsp;&nbsp;
+                                <i className="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
