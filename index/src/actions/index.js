@@ -5,9 +5,4 @@ export const select = (value) => {
     }
 }
 
-export const toggelView = (id) => {
-    return {
-        type: 'TOGGLE_TODO',
-        id
-    }
-}
+export const toggelView = { type: 'TOGGLEVIEW' }

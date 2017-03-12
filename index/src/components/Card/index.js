@@ -14,7 +14,7 @@ class Card extends React.Component {
         }
 
         return (
-            <div className="col s12 m6 l4">
+            <li className="col s12 m6 l4">
                 <div className="card bottom_up" style={delay}>
                     <div className="card-image">
                         <img src={this.props.data.imgUrl} />
@@ -26,7 +26,7 @@ class Card extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </li>
         )
     }
 }

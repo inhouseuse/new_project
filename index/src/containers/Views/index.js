@@ -9,6 +9,7 @@ class Views extends React.Component {
     render() {
         
         let viewList = FilterDisplayList(this.props.selectedTabIndex, Window.contentslist);
+        let isCardView = this.props.isCardView
 
         return (
             <ul>
@@ -19,17 +20,25 @@ class Views extends React.Component {
                     }
 
                     {group.pages.map((page, index)=> {
-                        li_page.push(
-                            <Card key={group.groupName+page.title} idx={index} data={page} color={group.groupColor} />
-                        )
+
+                        if (isCardView) {
+                            li_page.push(   
+                                <Card key={group.groupName+page.title} idx={index} data={page} color={group.groupColor} />
+                            )
+                        } else {
+                            li_page.push(   
+                                <List key={group.groupName+page.title} idx={index} data={page} />
+                            )
+                        }
+
                     })}
 
                     return (
                         <li key={group.groupName}>
                             <h3 style={group_color}>{group.groupName}</h3>
-                            <div className="row">
+                            <ul className={`row ${isCardView ? '' : 'collection'}`}>
                                 {li_page}
-                            </div>
+                            </ul>
                         </li>
                     )
                 })}

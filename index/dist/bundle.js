@@ -22601,12 +22601,7 @@ var select = exports.select = function select(value) {
     };
 };
 
-var toggelView = exports.toggelView = function toggelView(id) {
-    return {
-        type: 'TOGGLE_TODO',
-        id: id
-    };
-};
+var toggelView = exports.toggelView = { type: 'TOGGLEVIEW' };
 
 },{}],216:[function(require,module,exports){
 'use strict';
@@ -22652,7 +22647,7 @@ var Card = function (_React$Component) {
             };
 
             return _react2.default.createElement(
-                'div',
+                'li',
                 { className: 'col s12 m6 l4' },
                 _react2.default.createElement(
                     'div',
@@ -22691,7 +22686,7 @@ var Card = function (_React$Component) {
 exports.default = Card;
 
 },{"react":204}],217:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -22699,7 +22694,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22722,45 +22717,24 @@ var List = function (_React$Component) {
     }
 
     _createClass(List, [{
-        key: 'render',
+        key: "render",
         value: function render() {
 
             var bgcolor = {
                 background: this.props.color
             };
 
-            var delay = {
-                animationDelay: this.props.idx * 0.05 + 's'
-            };
-
             return _react2.default.createElement(
-                'div',
-                { className: 'col s12 m6 l4' },
+                "li",
+                { className: "collection-item" },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'card bottom_up', style: delay },
+                    "div",
+                    null,
+                    this.props.data.title,
                     _react2.default.createElement(
-                        'div',
-                        { className: 'card-image' },
-                        _react2.default.createElement('img', { src: this.props.data.imgUrl }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'card-content' },
-                            _react2.default.createElement(
-                                'h5',
-                                null,
-                                this.props.data.title
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'card-action center-align' },
-                            _react2.default.createElement(
-                                'a',
-                                { href: this.props.data.url, className: 'waves-effect waves-light btn pink accent-2' },
-                                'Open'
-                            )
-                        )
+                        "a",
+                        { href: this.props.data.url, className: "secondary-content" },
+                        _react2.default.createElement("i", { className: "fa fa-external-link", "aria-hidden": "true" })
                     )
                 )
             );
@@ -22856,8 +22830,8 @@ function mapDispatchToProps(dispatch) {
         selectTab: function selectTab(value) {
             dispatch((0, _index3.select)(value));
         },
-        toggleViews: function toggleViews() {
-            dispatch(toggleView());
+        toggleViewMode: function toggleViewMode() {
+            dispatch(_index3.toggelView);
         }
     };
 }
@@ -23038,16 +23012,9 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_index2.default, {
-                    selectedTabIndex: this.props.selectedTabIndex,
-                    selectTab: this.props.selectTab
-                }),
+                _react2.default.createElement(_index2.default, { selectedTabIndex: this.props.selectedTabIndex, selectTab: this.props.selectTab }),
                 _react2.default.createElement(_index4.default, null),
-                _react2.default.createElement(_index6.default, {
-                    selectedTabIndex: this.props.selectedTabIndex,
-                    isCardView: this.props.isCardView,
-                    toggleViews: this.props.toggleViews
-                }),
+                _react2.default.createElement(_index6.default, { selectedTabIndex: this.props.selectedTabIndex, isCardView: this.props.isCardView, toggleViewMode: this.props.toggleViewMode }),
                 _react2.default.createElement(_index8.default, null)
             );
         }
@@ -23058,7 +23025,7 @@ var App = function (_React$Component) {
 
 App.propTypes = {
     selectTab: _react2.default.PropTypes.func.isRequired,
-    toggleViews: _react2.default.PropTypes.func.isRequired
+    toggleViewMode: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = App;
@@ -23107,8 +23074,6 @@ var Main = function (_React$Component) {
                 height: '20px'
             };
 
-            console.log(this.props);
-
             return _react2.default.createElement(
                 'main',
                 { className: 'container' },
@@ -23126,29 +23091,23 @@ var Main = function (_React$Component) {
                         { className: 'buttonGroup' },
                         _react2.default.createElement(
                             'div',
-                            {
-                                onClick: function onClick() {
-                                    _this2.props.toggleViews();
-                                },
-                                className: 'toggleViewButton ' + (this.props.isCardView === false ? 'toggleViewButton--active' : '')
-                            },
+                            { onClick: function onClick() {
+                                    _this2.props.toggleViewMode();
+                                }, className: 'toggleViewButton ' + (this.props.isCardView === false ? 'toggleViewButton--active' : '') },
                             _react2.default.createElement('i', { className: 'fa fa-th-list', 'aria-hidden': 'true' }),
                             '\xA0\xA0ListView'
                         ),
                         _react2.default.createElement(
                             'div',
-                            {
-                                onClick: function onClick() {
-                                    _this2.props.toggleViews();
-                                },
-                                className: 'toggleViewButton ' + (this.props.isCardView ? 'toggleViewButton--active' : '')
-                            },
+                            { onClick: function onClick() {
+                                    _this2.props.toggleViewMode();
+                                }, className: 'toggleViewButton ' + (this.props.isCardView ? 'toggleViewButton--active' : '') },
                             _react2.default.createElement('i', { className: 'fa fa-th', 'aria-hidden': 'true' }),
                             '\xA0\xA0CardView'
                         )
                     )
                 ),
-                _react2.default.createElement(_index2.default, { selectedTabIndex: this.props.selectedTabIndex })
+                _react2.default.createElement(_index2.default, { isCardView: this.props.isCardView, selectedTabIndex: this.props.selectedTabIndex })
             );
         }
     }]);
@@ -23336,6 +23295,7 @@ var Views = function (_React$Component) {
         value: function render() {
 
             var viewList = (0, _FilterDisplayList2.default)(this.props.selectedTabIndex, Window.contentslist);
+            var isCardView = this.props.isCardView;
 
             return _react2.default.createElement(
                 'ul',
@@ -23348,7 +23308,12 @@ var Views = function (_React$Component) {
 
                     {
                         group.pages.map(function (page, index) {
-                            li_page.push(_react2.default.createElement(_index2.default, { key: group.groupName + page.title, idx: index, data: page, color: group.groupColor }));
+
+                            if (isCardView) {
+                                li_page.push(_react2.default.createElement(_index2.default, { key: group.groupName + page.title, idx: index, data: page, color: group.groupColor }));
+                            } else {
+                                li_page.push(_react2.default.createElement(_index4.default, { key: group.groupName + page.title, idx: index, data: page }));
+                            }
                         });
                     }
 
@@ -23361,8 +23326,8 @@ var Views = function (_React$Component) {
                             group.groupName
                         ),
                         _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
+                            'ul',
+                            { className: 'row ' + (isCardView ? '' : 'collection') },
                             li_page
                         )
                     );
@@ -23437,7 +23402,7 @@ function reducer() {
         case 'TOGGLEVIEW':
             {
                 return Object.assign({}, state, {
-                    isCardView: !isCardView
+                    isCardView: !state.isCardView
                 });
             }
         default:

@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action)  {
         }
         case 'TOGGLEVIEW': {
             return Object.assign({}, state, {
-                isCardView: !isCardView,
+                isCardView: !state.isCardView,
             })
         }
         default:

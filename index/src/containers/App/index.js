@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import IndexApp from '../Index/index';
-import {select} from '../../actions/index'
+import {select}     from '../../actions/index'
 import {toggelView} from '../../actions/index'
 
 
@@ -14,7 +14,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         selectTab: (value) => { dispatch(select(value)) },
-        toggleViews: () => { dispatch(toggleView()) },
+        toggleViewMode: () => { dispatch(toggelView) },
     }
 }
 
