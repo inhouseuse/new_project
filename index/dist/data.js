@@ -8,20 +8,20 @@ Window.contentslist = [
                 title: 'Page1',
                 desc: 'this page is ....',
                 url: 'projects_name1/index.html',
-                imgUrl: './index/img/600x400.png',
+                imgUrl: './index/img/react.png',
             },
             {
                 title: 'Page2',
                 desc: 'this page is ....',
                 url: 'projects_name2/index.html',
-                imgUrl: './index/img/600x400.png',
+                imgUrl: './index/img/react.png',
 
             },
             {
                 title: 'Page3',
                 desc: 'this page is ....',
                 url: 'projects_name3/index.html',
-                imgUrl: './index/img/600x400.png',
+                imgUrl: './index/img/react.png',
 
             },
         ]
