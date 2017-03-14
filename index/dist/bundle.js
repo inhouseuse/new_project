@@ -22739,14 +22739,9 @@ var List = function (_React$Component) {
                         "div",
                         null,
                         _react2.default.createElement(
-                            "h5",
+                            "h6",
                             null,
                             this.props.data.title
-                        ),
-                        _react2.default.createElement(
-                            "p",
-                            null,
-                            this.props.data.desc
                         )
                     ),
                     _react2.default.createElement(
@@ -22756,7 +22751,7 @@ var List = function (_React$Component) {
                             "a",
                             { onClick: function onClick() {
                                     Window.OpenExternalLink(_this2.props.data.url);
-                                }, className: "secondary-content waves-effect waves-light btn pink accent-2" },
+                                }, className: "secondary-content pink-text accent-2-text link" },
                             "Open\xA0\xA0",
                             _react2.default.createElement("i", { className: "fa fa-external-link", "aria-hidden": "true" })
                         )
@@ -23096,7 +23091,7 @@ var Main = function (_React$Component) {
             var _this2 = this;
 
             var space = {
-                height: '20px'
+                height: '30px'
             };
 
             return _react2.default.createElement(
@@ -23105,9 +23100,9 @@ var Main = function (_React$Component) {
                 _react2.default.createElement('div', { style: space }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'flexBaseline' },
+                    { className: 'flexCenter' },
                     _react2.default.createElement(
-                        'h1',
+                        'h3',
                         null,
                         'Open Pages'
                     ),
