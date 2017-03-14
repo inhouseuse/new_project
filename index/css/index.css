@@ -124,12 +124,11 @@ body {
   border-radius: 5px;
 }
 
-<<<<<<< HEAD
 .searchForm {
   display: flex;
   align-items: baseline;
-=======
+}
 .link {
   cursor: pointer;  
->>>>>>> 458f938705293222e6e4071254187cb95dea90b6
+
 }
