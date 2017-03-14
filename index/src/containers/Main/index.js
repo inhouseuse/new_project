@@ -25,7 +25,7 @@ class Main extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Views isCardView={this.props.isCardView} selectedTabIndex={this.props.selectedTabIndex} />
+                <Views isCardView={this.props.isCardView} selectedTabIndex={this.props.selectedTabIndex} wordForSearch={this.props.wordForSearch} />
             </main>
         )
     }

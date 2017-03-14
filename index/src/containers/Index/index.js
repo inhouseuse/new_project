@@ -9,9 +9,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Header selectedTabIndex={this.props.selectedTabIndex} selectTab={this.props.selectTab} />
+                <Header selectedTabIndex={this.props.selectedTabIndex} selectTab={this.props.selectTab} searchText={this.props.searchText} />
                 <Sidebar />
-                <Main selectedTabIndex={this.props.selectedTabIndex} isCardView={this.props.isCardView} toggleViewMode={this.props.toggleViewMode} />
+                <Main selectedTabIndex={this.props.selectedTabIndex} isCardView={this.props.isCardView} toggleViewMode={this.props.toggleViewMode} wordForSearch={this.props.wordForSearch} />
                 <Footer />
             </div>
         )

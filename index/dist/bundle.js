@@ -22603,6 +22603,13 @@ var select = exports.select = function select(value) {
 
 var toggelView = exports.toggelView = { type: 'TOGGLEVIEW' };
 
+var searchText = exports.searchText = function searchText(value) {
+    return {
+        type: 'SEARCHTEXT',
+        value: value
+    };
+};
+
 },{}],216:[function(require,module,exports){
 'use strict';
 
@@ -22852,6 +22859,9 @@ function mapDispatchToProps(dispatch) {
         },
         toggleViewMode: function toggleViewMode() {
             dispatch(_index3.toggelView);
+        },
+        searchText: function searchText(value) {
+            dispatch((0, _index3.searchText)(value));
         }
     };
 }
@@ -22940,10 +22950,7 @@ var Header = function (_React$Component) {
     _createClass(Header, [{
         key: 'render',
         value: function render() {
-
-            var serchPage = function serchPage(value) {
-                console.log(value);
-            };
+            var _this2 = this;
 
             return _react2.default.createElement(
                 'header',
@@ -22983,8 +22990,8 @@ var Header = function (_React$Component) {
                                         'div',
                                         null,
                                         _react2.default.createElement('input', { onChange: function onChange(e) {
-                                                serchPage(e.target.value);
-                                            }, placeholder: 'Enter your text', type: 'text' })
+                                                _this2.props.searchText(e.target.value);
+                                            }, placeholder: 'Enter page name', type: 'text' })
                                     )
                                 )
                             )
@@ -23062,9 +23069,9 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_index2.default, { selectedTabIndex: this.props.selectedTabIndex, selectTab: this.props.selectTab }),
+                _react2.default.createElement(_index2.default, { selectedTabIndex: this.props.selectedTabIndex, selectTab: this.props.selectTab, searchText: this.props.searchText }),
                 _react2.default.createElement(_index4.default, null),
-                _react2.default.createElement(_index6.default, { selectedTabIndex: this.props.selectedTabIndex, isCardView: this.props.isCardView, toggleViewMode: this.props.toggleViewMode }),
+                _react2.default.createElement(_index6.default, { selectedTabIndex: this.props.selectedTabIndex, isCardView: this.props.isCardView, toggleViewMode: this.props.toggleViewMode, wordForSearch: this.props.wordForSearch }),
                 _react2.default.createElement(_index8.default, null)
             );
         }
@@ -23157,7 +23164,7 @@ var Main = function (_React$Component) {
                         )
                     )
                 ),
-                _react2.default.createElement(_index2.default, { isCardView: this.props.isCardView, selectedTabIndex: this.props.selectedTabIndex })
+                _react2.default.createElement(_index2.default, { isCardView: this.props.isCardView, selectedTabIndex: this.props.selectedTabIndex, wordForSearch: this.props.wordForSearch })
             );
         }
     }]);
@@ -23167,7 +23174,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"../Views/index":227,"react":204}],224:[function(require,module,exports){
+},{"../Views/index":228,"react":204}],224:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23286,18 +23293,56 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-exports.default = function (index, cardlist) {
+exports.default = function (index, targetList) {
 
     if (index !== 0) {
         var list = [];
-        list.push(cardlist[index - 1]);
+        list.push(targetList[index - 1]);
         return list;
     }
 
-    return cardlist;
+    return targetList;
 };
 
 },{}],227:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = function (targetList, word) {
+
+    if (word === '') {
+        return targetList;
+    }
+
+    var newList = [];
+
+    targetList.map(function (item, index) {
+
+        var newGroup = [];
+        var newPages = [];
+
+        item.pages.map(function (item, index) {
+
+            if (item.title.includes(word)) {
+                newPages.push(item);
+            }
+        });
+
+        newGroup = _extends({}, item);
+        delete newGroup.pages;
+        newGroup.pages = newPages;
+        newList.push(newGroup);
+    });
+
+    return newList;
+};
+
+},{}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23322,6 +23367,10 @@ var _FilterDisplayList = require('./FilterDisplayList');
 
 var _FilterDisplayList2 = _interopRequireDefault(_FilterDisplayList);
 
+var _NarrowDownViewList = require('./NarrowDownViewList');
+
+var _NarrowDownViewList2 = _interopRequireDefault(_NarrowDownViewList);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23344,7 +23393,8 @@ var Views = function (_React$Component) {
         key: 'render',
         value: function render() {
 
-            var viewList = (0, _FilterDisplayList2.default)(this.props.selectedTabIndex, Window.contentslist);
+            var viewList = (0, _NarrowDownViewList2.default)(Window.contentslist, this.props.wordForSearch);
+            viewList = (0, _FilterDisplayList2.default)(this.props.selectedTabIndex, viewList);
             var isCardView = this.props.isCardView;
 
             return _react2.default.createElement(
@@ -23396,7 +23446,7 @@ var Views = function (_React$Component) {
 
 exports.default = Views;
 
-},{"../../components/Card/index":216,"../../components/List/index":217,"./FilterDisplayList":226,"react":204}],228:[function(require,module,exports){
+},{"../../components/Card/index":216,"../../components/List/index":217,"./FilterDisplayList":226,"./NarrowDownViewList":227,"react":204}],229:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -23431,7 +23481,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_index4.default, null)
 ), document.getElementById('root'));
 
-},{"./containers/App/index":219,"./reducers/index":229,"react":204,"react-dom":38,"react-redux":174,"redux":210}],229:[function(require,module,exports){
+},{"./containers/App/index":219,"./reducers/index":230,"react":204,"react-dom":38,"react-redux":174,"redux":210}],230:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23443,7 +23493,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 exports.default = reducer;
 var initialState = {
     selectedTabIndex: 0,
-    isCardView: true
+    isCardView: true,
+    wordForSearch: ''
 };
 
 function reducer() {
@@ -23463,9 +23514,16 @@ function reducer() {
                     isCardView: !state.isCardView
                 });
             }
+        case 'SEARCHTEXT':
+            {
+                return _extends({}, state, {
+                    wordForSearch: action.value
+                });
+            }
+
         default:
             return state;
     }
 }
 
-},{}]},{},[228]);
+},{}]},{},[229]);

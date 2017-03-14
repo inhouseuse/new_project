@@ -1,11 +1,11 @@
-export default (index, cardlist) => {
+export default (index, targetList) => {
 
     if (index !== 0) {
         let list = []
-        list.push(cardlist[index - 1])
+        list.push(targetList[index - 1])
         return list
     }
     
-    return cardlist
+    return targetList
 
 }

@@ -1,6 +1,7 @@
 const initialState = {
     selectedTabIndex: 0,
     isCardView: true,
+    wordForSearch: '',
 }
 
 export default function reducer(state = initialState, action)  {
@@ -15,6 +16,12 @@ export default function reducer(state = initialState, action)  {
                 isCardView: !state.isCardView,
             })
         }
+        case 'SEARCHTEXT' :{
+            return Object.assign({}, state, {
+                wordForSearch: action.value,
+            })
+        }
+
         default:
             return state
     }

@@ -6,3 +6,10 @@ export const select = (value) => {
 }
 
 export const toggelView = { type: 'TOGGLEVIEW' }
+
+export const searchText = (value) => {
+    return {
+        type: 'SEARCHTEXT',
+        value
+    }
+}

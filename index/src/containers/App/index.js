@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import IndexApp from '../Index/index';
 import {select}     from '../../actions/index'
 import {toggelView} from '../../actions/index'
+import {searchText} from '../../actions/index'
 
 
 // グローバルなstateから必要な値を取ってきて、コンポーネントのthis.propsとして渡す処理
@@ -15,6 +16,7 @@ function mapDispatchToProps(dispatch) {
     return {
         selectTab: (value) => { dispatch(select(value)) },
         toggleViewMode: () => { dispatch(toggelView) },
+        searchText: (value) => { dispatch(searchText(value)) },
     }
 }
 

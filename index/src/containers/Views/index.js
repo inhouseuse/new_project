@@ -3,11 +3,13 @@ import React from 'react'
 import Card from '../../components/Card/index'
 import List from '../../components/List/index'
 import FilterDisplayList from './FilterDisplayList'
+import NarrowDownViewList from './NarrowDownViewList'
 
 class Views extends React.Component {
     render() {
         
-        let viewList = FilterDisplayList(this.props.selectedTabIndex, Window.contentslist);
+        let viewList = NarrowDownViewList(Window.contentslist, this.props.wordForSearch);
+        viewList = FilterDisplayList(this.props.selectedTabIndex, viewList);
         let isCardView = this.props.isCardView
 
         return (
