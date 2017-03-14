@@ -22739,14 +22739,9 @@ var List = function (_React$Component) {
                         "div",
                         null,
                         _react2.default.createElement(
-                            "h5",
+                            "h6",
                             null,
                             this.props.data.title
-                        ),
-                        _react2.default.createElement(
-                            "p",
-                            null,
-                            this.props.data.desc
                         )
                     ),
                     _react2.default.createElement(
@@ -22756,7 +22751,7 @@ var List = function (_React$Component) {
                             "a",
                             { onClick: function onClick() {
                                     Window.OpenExternalLink(_this2.props.data.url);
-                                }, className: "secondary-content waves-effect waves-light btn pink accent-2" },
+                                }, className: "secondary-content pink-text accent-2-text link" },
                             "Open\xA0\xA0",
                             _react2.default.createElement("i", { className: "fa fa-external-link", "aria-hidden": "true" })
                         )
@@ -23126,7 +23121,7 @@ var Main = function (_React$Component) {
             var _this2 = this;
 
             var space = {
-                height: '20px'
+                height: '30px'
             };
 
             return _react2.default.createElement(
@@ -23135,9 +23130,9 @@ var Main = function (_React$Component) {
                 _react2.default.createElement('div', { style: space }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'flexBaseline' },
+                    { className: 'flexCenter' },
                     _react2.default.createElement(
-                        'h1',
+                        'h3',
                         null,
                         'Open Pages'
                     ),
@@ -23442,6 +23437,9 @@ _reactDom2.default.render(_react2.default.createElement(
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 exports.default = reducer;
 var initialState = {
     selectedTabIndex: 0,
@@ -23455,13 +23453,13 @@ function reducer() {
     switch (action.type) {
         case 'SELECT':
             {
-                return Object.assign({}, state, {
+                return _extends({}, state, {
                     selectedTabIndex: action.value
                 });
             }
         case 'TOGGLEVIEW':
             {
-                return Object.assign({}, state, {
+                return _extends({}, state, {
                     isCardView: !state.isCardView
                 });
             }
