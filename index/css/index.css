@@ -79,6 +79,10 @@ body {
     }
 }
 
+.flex {
+  display: flex;
+}
+
 .flexBaseline {
   display: flex;
   align-items: baseline;
@@ -86,7 +90,6 @@ body {
 .flexCenter {
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
 }
 .marginLeft_auto {
   margin-left: auto;
@@ -119,4 +122,9 @@ body {
   font-size: 18px;
   line-height: 2;
   border-radius: 5px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: baseline;
 }

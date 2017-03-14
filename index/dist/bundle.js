@@ -22945,6 +22945,11 @@ var Header = function (_React$Component) {
     _createClass(Header, [{
         key: 'render',
         value: function render() {
+
+            var serchPage = function serchPage(value) {
+                console.log(value);
+            };
+
             return _react2.default.createElement(
                 'header',
                 { className: 'teal lighten-2 z-depth-4 navbar-fixed' },
@@ -22958,10 +22963,35 @@ var Header = function (_React$Component) {
                             'div',
                             { className: 'container' },
                             _react2.default.createElement(
-                                'a',
-                                { href: '#', className: 'brand-logo' },
-                                _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' }),
-                                ' IndexPage'
+                                'div',
+                                { className: 'flex' },
+                                _react2.default.createElement(
+                                    'div',
+                                    null,
+                                    _react2.default.createElement(
+                                        'a',
+                                        { className: 'brand-logo' },
+                                        _react2.default.createElement('i', { className: 'fa fa-flag', 'aria-hidden': 'true' }),
+                                        ' IndexPage'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'searchForm marginLeft_auto' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        null,
+                                        _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' }),
+                                        '\xA0\xA0'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        null,
+                                        _react2.default.createElement('input', { onChange: function onChange(e) {
+                                                serchPage(e.target.value);
+                                            }, placeholder: 'Enter your text', type: 'text' })
+                                    )
+                                )
                             )
                         )
                     ),

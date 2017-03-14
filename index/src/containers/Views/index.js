@@ -4,7 +4,6 @@ import Card from '../../components/Card/index'
 import List from '../../components/List/index'
 import FilterDisplayList from './FilterDisplayList'
 
-
 class Views extends React.Component {
     render() {
         
