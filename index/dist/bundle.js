@@ -23328,7 +23328,7 @@ exports.default = function (targetList, word) {
 
         item.pages.map(function (item, index) {
 
-            if (item.title.includes(word)) {
+            if (item.title.indexOf(word) > -1) {
                 newPages.push(item);
             }
         });
